@@ -21,9 +21,9 @@ navItems.forEach(span => span.addEventListener('click', (e) => {
 
     if (ul.dataset.expanded === "false") {
         ul.dataset.expanded = "true";
-        img.src = "images/icon-arrow-up.svg";
+        img.src = "./images/icon-arrow-up.svg";
     } else {
         ul.dataset.expanded = "false";
-        img.src = "images/icon-arrow-down.svg";
+        img.src = "./images/icon-arrow-down.svg";
     }
 }));

@@ -83,9 +83,13 @@ button:active {
     // margin-top: 4rem;
     // padding-inline-start: 30px;
 
-    .nav-item span {
+    .nav-item > span {
         display: block;
         position: relative;
+
+        @media (max-width: 28.125em) {
+            display: inline-block;
+        }
 
         .arrow-logo {
             position: absolute;
