@@ -1,0 +1,322 @@
+/* colors */
+$almost-white: hsl(0, 0%, 98%);
+$medium-gray: hsl(0, 0%, 41%);
+$almost-black: hsl(0, 0%, 8%);
+
+/* utility classes */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.flow>*+* {
+    margin-top: var(--flow-space, 1rem);
+}
+
+
+/*--------*/
+/* Layout */
+/*--------*/
+
+body {
+    font-size: 18px;
+    color: $medium-gray;
+    background-color: $almost-white;
+}
+
+.container {
+    padding: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li, button {
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(3px);
+}
+
+/* navigation */
+@media (max-width: 28.125em) {
+    .header {
+        padding-top: .5rem;
+    }
+
+    .primary-navigation {
+        position: fixed;
+        inset: 0 0 0 35%;
+        background-color: $almost-white;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: .5s ease-in-out;
+        // display: none;
+
+        &[data-expanded="true"] {
+            transform: translateX(0);
+            filter: drop-shadow(-10rem 0 0 rgba(0, 0, 0, .60));
+            transition: .5s ease-in-out;
+        }
+    }
+
+    .navigation {
+        flex-direction: column;
+        margin-top: 4rem;
+        padding-inline-start: 30px;
+    }
+
+    .hero-picture {
+        height: 350px;
+        margin-inline: -1rem;
+    }
+}
+
+.navigation {
+    // flex-direction: column;
+    // margin-top: 4rem;
+    // padding-inline-start: 30px;
+
+    .nav-item span {
+        display: block;
+        position: relative;
+
+        .arrow-logo {
+            position: absolute;
+            top: 35%;
+            right: -20%;
+        }
+    }
+
+    .features-menu {
+        display: none;
+        transform-origin: top center;
+        padding-inline-start: 25px;
+
+        &[data-expanded="true"] {
+            animation: growDown 300ms ease-in-out forwards;
+            display: block;
+        }
+
+        li a {
+            display: block;
+            padding-block: .5rem;
+        }
+
+        span {
+            position: relative;
+            display: flex;
+            gap: 1rem;
+
+            img {
+                // position: absolute;
+                aspect-ratio: 1;
+                // width: 1rem;
+                height: 1.25rem;
+                // top: 15%;
+                // left: -35%;
+            }
+        }
+    }
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+
+    80% {
+        transform: scaleY(1.1)
+    }
+
+    100% {
+        transform: scaleY(1)
+    }
+}
+
+.logo:hover {
+    transform: translateY(3px);
+}
+
+.mobile-nav-toggle {
+    // display: block;
+    position: absolute;
+    z-index: 100;
+    top: 1rem;
+    right: 1.5rem;
+    background: 0;
+    border: 0;
+    width: 2rem;
+    aspect-ratio: 1;
+    background-image: url(/images/icon-menu.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &[data-expanded="true"] {
+        background-image: url(/images/icon-close-menu.svg);
+    }
+}
+
+.login-register {
+    display: none;
+}
+
+/* main */
+@media (max-width: 28.125em) {
+    .main {
+        text-align: center;
+    }
+}
+
+.hero-picture {
+    background-image: url(/images/image-hero-mobile.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.main-info {
+
+    h1 {
+        color: $almost-black;
+
+    }
+
+    button {
+        padding: .75rem 1.5rem;
+        border: none;
+        border-radius: 15px;
+        background-color: $almost-black;
+        color: $almost-white;
+
+        &:hover {
+            background-color: $almost-white;
+            color: $almost-black;
+            outline: 1px solid $almost-black;
+        }
+
+        &:active {
+            transform: translateY(3px);
+        }
+    }
+}
+
+.clients {
+    margin-top: 3rem;
+}
+
+@media (min-width: 28.125em) {
+    .container {
+        max-width: 90em;
+    }
+
+    /* Header */
+    .header {
+        align-items: center;
+    }
+
+    .navigation {
+        margin-left: 1.5rem;
+        // --gap: 3.5rem;
+        --gap: clamp(1rem, 3.5vw, 3.5rem);
+
+        > li:hover {
+            color: $almost-black;
+        }
+
+        .fm1 {
+            translate: -4.5rem;
+        }
+
+        .features-menu {
+            position: absolute;
+            top: 8%;
+            padding-inline-start: 0;
+            padding: .5rem 1.5rem;
+            background-color: white;
+            box-shadow: 0 0 25px 0.0000001px rgba(0, 0, 0, .25);
+            border-radius: 10px;
+
+            li a {
+                padding-block: .35rem;
+            }
+        }
+    }
+
+    .mobile-nav-toggle {
+        display: none;
+    }
+
+    .login-register {
+        display: block;
+        margin-left: auto;
+        margin-right: clamp(1rem, 4vw, 5rem);
+
+        button:first-child, button:first-child:hover {
+            outline: 0;
+        }
+
+        button {
+            padding: .5rem 1.25rem;
+            border: none;
+            border-radius: 15px;
+            outline: 1px solid $medium-gray;
+            background-color: $almost-white;
+            color: $medium-gray;
+
+            &:hover {
+                outline: 1px solid $almost-black;
+                color: $almost-black;
+            }
+        }
+    }
+
+    /* Main */
+    .main {
+        padding: clamp(1rem, 5vw, 5rem);
+        display: grid;
+        grid-template-columns: 5rem 1fr 1fr 5rem;
+        grid-template-areas:
+            '. info pic .'
+            '. clients pic .'
+        ;
+    }
+
+    .main-info {
+        grid-area: info;
+        --flow-space: 2.5rem;
+
+        h1 {
+            margin-top: 3rem;
+            font-size: clamp(2rem, 10vw, 5rem);
+            color: $almost-black;
+
+            span {
+                display: block;
+                margin-bottom: -2rem;
+            }
+        }
+
+        p {
+            max-width: 45ch;
+        }
+    }
+
+    .hero-picture {
+        grid-area: pic;
+        grid-column: span 2;
+        background-image: url(/images/image-hero-desktop.png);
+    }
+
+    .clients {
+        grid-area: clients;
+        --gap: 3rem;
+        margin-top: clamp(2rem, 7vw, 6rem);
+    }
+}
