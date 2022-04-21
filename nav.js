@@ -2,9 +2,6 @@ const header = document.querySelector('.header'),
     nav = header.querySelector('.primary-navigation'),
     navToggle = header.querySelector('.mobile-nav-toggle'),
     navItems = header.querySelectorAll('.nav-item > span');
-    // features = nav.querySelectorAll('.features-menu');
-
-console.log(navItems);
 
 navToggle.addEventListener('click', () => {
     if (nav.dataset.expanded === "false") {
