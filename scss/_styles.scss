@@ -154,12 +154,12 @@ button:active {
     border: 0;
     width: 2rem;
     aspect-ratio: 1;
-    background-image: url(/images/icon-menu.svg);
+    background-image: url(https://any2h.github.io/intro-section-with-dropdown-nav/images/icon-menu.svg);
     background-repeat: no-repeat;
     background-position: center;
 
     &[data-expanded="true"] {
-        background-image: url(/images/icon-close-menu.svg);
+        background-image: url(https://any2h.github.io/intro-section-with-dropdown-nav/images/icon-close-menu.svg);
     }
 }
 
