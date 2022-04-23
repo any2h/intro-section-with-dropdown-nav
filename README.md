@@ -21,9 +21,9 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
+![desktop](desktop.png)
+![mobile](mobile.png)
 ### Links
 
-- Solution URL: https://github.com/any2h/intro-section-with-dropdown-nav
-- Live Site URL: https://any2h.github.io/intro-section-with-dropdown-nav/
+- Solution URL: [Solution URL](https://github.com/any2h/intro-section-with-dropdown-nav)
+- Live Site URL: [GitHub Pages](https://any2h.github.io/intro-section-with-dropdown-nav/)
