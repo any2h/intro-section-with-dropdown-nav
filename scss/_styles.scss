@@ -281,6 +281,7 @@ button:active {
             outline: 1px solid $medium-gray;
             background-color: $almost-white;
             color: $medium-gray;
+            transition: all .3s ease-in-out;
 
             &:hover {
                 outline: 1px solid $almost-black;
