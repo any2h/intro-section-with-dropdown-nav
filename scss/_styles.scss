@@ -72,6 +72,15 @@ button:active {
         padding-inline-start: 30px;
     }
 
+    .main-info h1 {
+        display: flex;
+        justify-content: center;
+
+        > span {
+            margin-right: .5rem;
+        }
+    }
+
     .hero-picture {
         height: 350px;
         margin-inline: -1rem;
