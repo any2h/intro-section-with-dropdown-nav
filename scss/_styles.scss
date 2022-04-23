@@ -193,6 +193,7 @@ button:active {
         border: none;
         border-radius: 15px;
         background-color: $almost-black;
+        font-weight: bold;
         color: $almost-white;
 
         &:hover {
@@ -209,6 +210,7 @@ button:active {
 
 .clients {
     margin-top: 3rem;
+    align-items: center;
 }
 
 @media (min-width: 28.125em) {
