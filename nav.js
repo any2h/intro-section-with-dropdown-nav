@@ -27,9 +27,9 @@ navItems.forEach(link => link.addEventListener('click', (e) => {
 
     if (link.parentElement.classList.contains('opened')) {
         link.parentElement.classList.remove('opened');
-        arrow.src = "/images/icon-arrow-down.svg";
+        arrow.src = "images/icon-arrow-down.svg";
     } else {
         link.parentElement.classList.add('opened');
-        arrow.src = "/images/icon-arrow-up.svg";
+        arrow.src = "images/icon-arrow-up.svg";
     }
 }));
