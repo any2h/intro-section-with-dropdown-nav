@@ -15,7 +15,7 @@
     &-image {
         width: 100%;
         min-height: 20rem;
-        background-image: url(/images/image-hero-mobile.png);
+        background-image: url(https://any2h.github.io/intro-section-with-dropdown-nav/images/image-hero-mobile.png);
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
@@ -25,7 +25,7 @@
         }
 
         @include breakpoint-up(large) {
-            background-image: url(/images/image-hero-desktop.png);
+            background-image: url(https://any2h.github.io/intro-section-with-dropdown-nav/images/image-hero-desktop.png);
             min-height: 40rem;
             grid-area: image;
         }
