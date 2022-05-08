@@ -1,29 +1,35 @@
-const header = document.querySelector('.header'),
-    nav = header.querySelector('.primary-navigation'),
-    navToggle = header.querySelector('.mobile-nav-toggle'),
-    navItems = header.querySelectorAll('.nav-item > span');
+const body = document.querySelector('body'),
+    header = body.querySelector('.header'),
+    nav = header.querySelector('.nav'),
+    navToggle = nav.querySelector('.nav-toggle'),
+    navItems = body.querySelectorAll('.nav-links li a');
+
+// window.addEventListener('click', (e) => {
+//     if (!e.target.matches('[role="list"]')) {
+//         let li = document.querySelector('[role="list"]').parentElement;
+        
+//         if (li.classList.contains('opened')) {
+//             li.classList.remove('opened');
+//         }
+//     }
+// });
 
 navToggle.addEventListener('click', () => {
-    if (nav.dataset.expanded === "false") {
-        nav.dataset.expanded = "true";
-        navToggle.dataset.expanded = "true";
-        document.body.style.overflow = 'hidden';
-    } else {
-        nav.dataset.expanded = "false";
-        navToggle.dataset.expanded = "false";
-        document.body.style.overflow = '';
-    }
+    nav.classList.toggle('opened');
+    body.classList.toggle('overflow-hidden');
 });
 
-navItems.forEach(span => span.addEventListener('click', (e) => {
-    const img = span.querySelector('img');
-    const ul = span.parentElement.querySelector('.features-menu');
+navItems.forEach(link => link.addEventListener('click', (e) => {
+    
+    let arrow = e.target.querySelector('img');
 
-    if (ul.dataset.expanded === "false") {
-        ul.dataset.expanded = "true";
-        img.src = "./images/icon-arrow-up.svg";
+    // link.parentElement.classList.toggle('opened');
+
+    if (link.parentElement.classList.contains('opened')) {
+        link.parentElement.classList.remove('opened');
+        arrow.src = "/images/icon-arrow-down.svg";
     } else {
-        ul.dataset.expanded = "false";
-        img.src = "./images/icon-arrow-down.svg";
+        link.parentElement.classList.add('opened');
+        arrow.src = "/images/icon-arrow-up.svg";
     }
 }));

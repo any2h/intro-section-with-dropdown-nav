@@ -14,75 +14,72 @@
 	<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
 
 	<!-- Styles -->
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="/scss/styles.css">
 </head>
 
 <body>
 
 	<div class="container">
 
-		<header class="header flex">
-			<div class="logo"><img src="images/logo.svg" alt="snap logo"></div>
+		<header class="header">
+			<nav class="nav flex">
+				<a href="#" class="logo"><img src="images/logo.svg" alt="snap"></a>
 
-			<button class="mobile-nav-toggle" data-expanded="false"></button>
-
-			<nav class="primary-navigation" data-expanded="false">
-				<ul class="navigation flex">
-
-					<li class="nav-item" data-expanded="false"><span>Features <img class="arrow-logo"
-								src="images/icon-arrow-down.svg" alt="arrow"></span>
-						<ul class="features-menu fm1" data-expanded="false">
-							<li><a href="#"><span><img src="images/icon-todo.svg" alt="todo icon">Todo List</span></a>
-							</li>
-							<li><a href="#"><span><img src="images/icon-calendar.svg"
-											alt="calendar icon">Calendar</span></a></li>
-							<li><a href="#"><span><img src="images/icon-reminders.svg"
-											alt="reminders icon">Reminders</span></a></li>
-							<li><a href="#"><span><img src="images/icon-planning.svg"
-											alt="planning icon">Planning</span></a></li>
+				<ul class="nav-links flex">
+					<li><a href="#">Features <img src="/images/icon-arrow-down.svg" alt="arrow down"></a> 
+						<ul role="list">
+							<li><img src="/images/icon-todo.svg" alt=""> Todo List</li>
+							<li><img src="/images/icon-calendar.svg" alt=""> Calendar</li>
+							<li><img src="/images/icon-reminders.svg" alt=""> Reminders</li>
+							<li><img src="/images/icon-planning.svg" alt=""> Planning</li>
 						</ul>
 					</li>
-
-					<li class="nav-item" data-expanded="false"><span>Company <img class="arrow-logo"
-								src="images/icon-arrow-down.svg" alt="arrow"></span>
-						<ul class="features-menu" data-expanded="false">
-							<li><a href="#">History</a></li>
-							<li><a href="#">Our Team</a></li>
-							<li><a href="#">Blog</a></li>
+					<li><a href="#">Company <img src="/images/icon-arrow-down.svg" alt="arrow down"> </a>
+						<ul role="list">
+							<li>History</li>
+							<li>Our Team</li>
+							<li>Blog</li>
 						</ul>
 					</li>
-
-					<li>Careers</li>
-
-					<li>About</li>
-
+					<li><a href="#">Careers</a></li>
+					<li><a href="#">About</a></li>
 				</ul>
+
+				<button class="nav-toggle hide-for-desktop">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+
+				<div class="nav-login hide-for-mobile">
+					<button>Login</button>
+					<button>Register</button>
+				</div>
+
+				<div class="overlay"></div>
 			</nav>
-
-			<div class="login-register">
-				<button>Login</button>
-				<button>Register</button>
-			</div>
-
 		</header>
 
-		<main class="main flow">
-			<div class="hero-picture"></div>
+		<main class="main">
+			<section class="hero flow">
 
-			<div class="main-info flow">
-				<h1><span>Make</span> remote work</h1>
-				<p>Get your team in sync, no matter your location. Streamline processes,
-					create team rituals, and watch productivity soar.
-				</p>
-				<button>Learn more</button>
-			</div>
+				<div class="hero-image"></div>
+				<div class="hero-text flow">
+					<h1>Make <span>remote work</span></h1>
+					<p>Get your team in sync, no matter your location. Streamline processes,
+						create team rituals, and watch productivity soar.
+					</p>
+					<button>Learn more</button>
+				</div>
 
-			<div class="clients flex">
-				<div><img src="images/client-databiz.svg" alt=""></div>
-				<div><img src="images/client-audiophile.svg" alt=""></div>
-				<div><img src="images/client-meet.svg" alt=""></div>
-				<div><img src="images/client-maker.svg" alt=""></div>
-			</div>
+				<div class="hero-clients flex">
+					<div><img src="images/client-databiz.svg" alt="databiz"></div>
+					<div><img src="images/client-audiophile.svg" alt="audiophile"></div>
+					<div><img src="images/client-meet.svg" alt="meet"></div>
+					<div><img src="images/client-maker.svg" alt="maker"></div>
+				</div>
+
+			</section>
 		</main>
 
 	</div>

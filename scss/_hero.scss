@@ -1,0 +1,100 @@
+.hero {
+    --flow-space: 2.5rem;
+    text-align: center;
+    
+    @include breakpoint-up(large) {
+        padding: 3.5rem 8.5rem;
+        display: grid;
+        gap: 7rem;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        'text image'
+        'clients image';
+    }
+
+    &-image {
+        width: 100%;
+        min-height: 20rem;
+        background-image: url(/images/image-hero-mobile.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+
+        @include breakpoint-up(medium) {
+            min-height: 25rem;
+        }
+
+        @include breakpoint-up(large) {
+            background-image: url(/images/image-hero-desktop.png);
+            min-height: 40rem;
+            grid-area: image;
+        }
+    }
+
+    &-text {
+        --flow-space: 1.5rem;
+        padding-inline: 1rem;
+
+        @include breakpoint-up(medium) {
+            --flow-space: 2.75rem;
+        }
+
+        @include breakpoint-up(large) {
+            margin-top: 6.875rem;
+            text-align: left;
+            grid-area: text;
+
+            p {
+                width: 97%;
+            }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 4rem);
+            color: $almost-black;
+
+            @include breakpoint-up(large) {
+                line-height: 1.1;
+
+                span {
+                    display: block;
+                }
+            }
+        }
+
+        button {
+            padding: .875rem 1.75rem;
+            font-size: 14px;
+            font-weight: 700;
+            background: 0;
+            border: 0;
+            background-color: $almost-black;
+            color: $almost-white;
+            border-radius: 15px;
+            outline: 1px solid $almost-black;
+            transition: all .15s ease-in-out;
+
+            @include breakpoint-up(large) {
+                font-size: 16px;
+            }
+
+            &:hover {
+                background-color: $almost-white;
+                color: $almost-black;
+            }
+        }
+    }
+
+    &-clients {
+        justify-content: center;
+        align-items: center;
+        --gap: 1.5rem;
+        padding-inline: 1rem;
+
+        @include breakpoint-up(large) {
+            margin-top: 0;
+            --gap: 2rem;
+            grid-area: clients;
+        }
+    }
+}
